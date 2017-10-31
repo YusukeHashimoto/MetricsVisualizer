@@ -8,6 +8,12 @@ g.setNode("Object", { label: "Object", class: "type-S" });
 
 for(var key in classMap) {
     g.setNode(key, { label: key });
+
+    if(!classMap[classMap[key]]) {
+        //console.log("no!");
+        g.setNode(classMap[key], { label: classMap[key] });
+    }
+
 }
 
 g.nodes().forEach(function(v) {
